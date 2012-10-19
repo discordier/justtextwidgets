@@ -24,5 +24,6 @@ if (!defined('TL_ROOT'))
 $GLOBALS['BE_FFL']['justtext']  = 'JustAText';
 $GLOBALS['BE_FFL']['justtextoption']  = 'JustATextOption';
 $GLOBALS['BE_FFL']['justexplanation'] = 'JustAnExplanation';
+$GLOBALS['BE_FFL']['justsmalltext'] = 'JustASmallText';
 
 ?>
