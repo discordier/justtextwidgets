@@ -74,17 +74,21 @@ class JustATextOption extends Widget
 			$this->arrOptions = array(array('value'=>'', 'label'=>'-'));
 		}
 
+		$strClass = (strlen($this->strClass) ? ' class="' . $this->strClass . '"' : '');
+		$strStyle = (strlen($this->arrAttributes['style']) ? ' style="' . $this->arrAttributes['style'] . '"' : '');
+
 		foreach ($this->arrOptions as $strKey=>$arrOption)
 		{
 			if (isset($arrOption['value']))
 			{
 				if ($this->isSelected($arrOption))
 				{
-					return sprintf('<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><span>%s</span>',
+					return sprintf('<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><span%s>%s</span>',
 										$this->strId,
 										$this->strName,
-										 specialchars($arrOption['value']),
-										 $arrOption['label']);
+										specialchars($arrOption['value']),
+										$strClass . $strStyle,
+										$arrOption['label']);
 				}
 			}
 			else
@@ -93,11 +97,12 @@ class JustATextOption extends Widget
 				{
 					if ($this->isSelected($arrOptgroup))
 					{
-						return sprintf('<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><span>%s</span>',
+						return sprintf('<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><span%s>%s</span>',
 											$this->strId,
 											$this->strName,
-											 specialchars($arrOptgroup['value']),
-											 $arrOptgroup['label']);
+											specialchars($arrOptgroup['value']),
+											$strClass . $strStyle,
+											$arrOptgroup['label']);
 					}
 				}
 			}
