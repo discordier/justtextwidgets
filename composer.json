@@ -1,0 +1,31 @@
+{
+	"name": "discordier/justtextwidgets",
+	"description":"Hidden fields with text values and explanation texts",
+	"keywords":["contao", "widget", "text"],
+	"type": "contao-module",
+	"homepage":"https://github.com/discordier/justtextwidgets",
+	"license":"LGPL-3.0+",
+	"authors":[
+		{
+			"name":"Christian Schiffler",
+			"email":"c.schiffler@cyberspectrum.de",
+			"homepage":"http://www.cyberspectrum.de",
+			"role":"Developer"
+		}
+	],
+	"support":{
+		"issues":"https://github.com/discordier/justtextwidgets/issues",
+		"irc":"irc://irc.freenode.org/contao.dev",
+	},
+	"require": {
+		"contao/core": ">=2.10,<4",
+		"contao-community-alliance/composer-installer": "dev-master"
+	},
+	"extra": {
+		"contao": {
+			"symlinks": {
+				"system/modules/justtextwidgets": "system/modules/justtextwidgets"
+			}
+		}
+	}
+}
