@@ -15,7 +15,7 @@
 	],
 	"support":{
 		"issues":"https://github.com/discordier/justtextwidgets/issues",
-		"irc":"irc://irc.freenode.org/contao.dev",
+		"irc":"irc://irc.freenode.org/contao.dev"
 	},
 	"require": {
 		"contao/core": ">=2.10,<4",
