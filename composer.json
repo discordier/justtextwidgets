@@ -21,6 +21,9 @@
 		"contao/core": ">=2.10,<4",
 		"contao-community-alliance/composer-installer": "*"
 	},
+	"replace": {
+		"contao-legacy/justtextwidgets": "*"
+	},
 	"extra": {
 		"contao": {
 			"symlinks": {
