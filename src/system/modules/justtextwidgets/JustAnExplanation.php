@@ -48,7 +48,7 @@ class JustAnExplanation extends Widget
 		{
 			return '';
 		}
-		return sprintf('<span %s>%s%s</label>',
+		return sprintf('<label %s>%s%s</label>',
 						(strlen($this->strClass) ? ' class="' . $this->strClass . '"' : ''),
 						$this->strLabel,
 						($this->required ? '<span class="mandatory">*</span>' : ''));
