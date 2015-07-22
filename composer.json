@@ -29,7 +29,7 @@
 	"extra": {
 		"contao": {
 			"symlinks": {
-				"src/system/modules/justtextwidgets": "system/modules/justtextwidgets"
+				"contao": "system/modules/justtextwidgets"
 			}
 		}
 	}
