@@ -24,6 +24,7 @@
     "source": "https://github.com/discordier/justtextwidgets"
   },
   "require": {
+    "php": ">=5.3",
     "contao/core": ">=3.2,<4",
     "contao-community-alliance/composer-plugin": "~2.0"
   },
@@ -45,7 +46,7 @@
       }
     },
     "branch-alias": {
-      "dev-master": "2.0.x-dev"
+      "dev-master": "1.0.x-dev"
     }
   }
 }
