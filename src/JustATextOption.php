@@ -37,7 +37,7 @@ class JustATextOption extends \Widget
     protected $arrOptions = array();
 
     /**
-     * Add specific attributes
+     * Add specific attributes.
      *
      * @param string $strKey   The name of the key to set.
      *
