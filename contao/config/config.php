@@ -1,8 +1,7 @@
 <?php
 
 /**
- * PHP version 5
- * @package	   JustTextWidgets
+ * @package    JustTextWidgets
  * @subpackage Core
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @copyright  CyberSpectrum
@@ -10,10 +9,8 @@
  * @filesource
  */
 
-/**
- * Form fields
- */
-$GLOBALS['BE_FFL']['justtext']  = 'JustAText';
+// Form fields
+$GLOBALS['BE_FFL']['justtext']        = 'JustAText';
 $GLOBALS['BE_FFL']['justtextoption']  = 'JustATextOption';
 $GLOBALS['BE_FFL']['justexplanation'] = 'JustAnExplanation';
-$GLOBALS['BE_FFL']['justsmalltext'] = 'JustASmallText';
+$GLOBALS['BE_FFL']['justsmalltext']   = 'JustASmallText';

@@ -1,36 +1,40 @@
 {
-	"name": "discordier/justtextwidgets",
-	"description":"Hidden fields with text values and explanation texts",
-	"keywords":["contao", "widget", "text"],
-	"type": "contao-module",
-	"homepage":"https://www.cyberspectrum.de",
-	"license":"LGPL-3.0+",
-	"authors":[
-		{
-			"name":"Christian Schiffler",
-			"email":"c.schiffler@cyberspectrum.de",
-			"homepage":"http://www.cyberspectrum.de",
-			"role":"Developer"
-		}
-	],
-	"support":{
-		"email":"info@contao-community-alliance.de",
-		"issues":"https://github.com/discordier/justtextwidgets/issues",
-		"irc":"irc://irc.freenode.org/contao.dev",
-		"source":"https://github.com/discordier/justtextwidgets"
-	},
-	"require": {
-		"contao/core": ">=2.10,<4",
-		"contao-community-alliance/composer-plugin": "*"
-	},
-	"replace": {
-		"contao-legacy/justtextwidgets": "*"
-	},
-	"extra": {
-		"contao": {
-			"symlinks": {
-				"contao": "system/modules/justtextwidgets"
-			}
-		}
-	}
+  "name": "discordier/justtextwidgets",
+  "description": "Hidden fields with text values and explanation texts",
+  "keywords": [
+    "contao",
+    "widget",
+    "text"
+  ],
+  "type": "contao-module",
+  "homepage": "https://www.cyberspectrum.de",
+  "license": "LGPL-3.0+",
+  "authors": [
+    {
+      "name": "Christian Schiffler",
+      "email": "c.schiffler@cyberspectrum.de",
+      "homepage": "http://www.cyberspectrum.de",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "info@contao-community-alliance.de",
+    "issues": "https://github.com/discordier/justtextwidgets/issues",
+    "irc": "irc://irc.freenode.org/contao.dev",
+    "source": "https://github.com/discordier/justtextwidgets"
+  },
+  "require": {
+    "contao/core": ">=2.10,<4",
+    "contao-community-alliance/composer-plugin": "*"
+  },
+  "replace": {
+    "contao-legacy/justtextwidgets": "*"
+  },
+  "extra": {
+    "contao": {
+      "symlinks": {
+        "contao": "system/modules/justtextwidgets"
+      }
+    }
+  }
 }
