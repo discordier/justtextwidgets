@@ -78,34 +78,46 @@ class JustATextOption extends \Widget
         $strClass = (strlen($this->strClass) ? ' class="' . $this->strClass . '"' : '');
         $strStyle = (strlen($this->arrAttributes['style']) ? ' style="' . $this->arrAttributes['style'] . '"' : '');
 
-        foreach ($this->arrOptions as $arrOption) {
-            if (isset($arrOption['value'])) {
-                if ($this->isSelected($arrOption)) {
-                    return sprintf(
-                        '<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><span%s>%s</span>',
-                        $this->strId,
-                        $this->strName,
-                        specialchars($arrOption['value']),
-                        $strClass . $strStyle,
-                        $arrOption['label']
-                    );
+        return $this->checkOptGroup($this->arrOptions, $strClass, $strStyle);
+    }
+
+    /**
+     * Scan an option group for the selected option.
+     *
+     * @param array  $options The option array.
+     *
+     * @param string $class   The html class to use.
+     *
+     * @param string $style   The html style to use.
+     *
+     * @return null|string
+     */
+    private function checkOptGroup($options, $class, $style)
+    {
+        foreach ($options as $option) {
+            // If it is an option group, handle it.
+            if (!isset($options['value'])) {
+                $result = $this->checkOptGroup($option, $class, $style);
+                if ($result) {
+                    return $result;
                 }
-            } else {
-                foreach ($arrOption as $arrOptgroup) {
-                    if ($this->isSelected($arrOptgroup)) {
-                        return sprintf(
-                            '<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><span%s>%s</span>',
-                            $this->strId,
-                            $this->strName,
-                            specialchars($arrOptgroup['value']),
-                            $strClass . $strStyle,
-                            $arrOptgroup['label']
-                        );
-                    }
-                }
+
+                continue;
+            }
+
+            // No option group, check if it is selected.
+            if ($this->isSelected($option)) {
+                return sprintf(
+                    '<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><span%s>%s</span>',
+                    $this->strId,
+                    $this->strName,
+                    specialchars($option['value']),
+                    $class . $style,
+                    $option['label']
+                );
             }
         }
 
-        return '';
+        return null;
     }
 }
