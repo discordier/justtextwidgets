@@ -51,7 +51,7 @@ class JustAnExplanation extends \Widget
         }
 
         return sprintf(
-            '<span %s>%s%s</label>',
+            '<span %s>%s%s</span>',
             (strlen($this->strClass) ? ' class="' . $this->strClass . '"' : ''),
             $this->strLabel,
             ($this->required ? '<span class="mandatory">*</span>' : '')
