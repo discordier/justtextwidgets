@@ -40,6 +40,9 @@
       "symlinks": {
         "contao": "system/modules/justtextwidgets"
       }
+    },
+    "branch-alias": {
+      "dev-master": "~2.0.x-dev"
     }
   }
 }
