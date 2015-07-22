@@ -30,6 +30,11 @@
   "replace": {
     "contao-legacy/justtextwidgets": "*"
   },
+  "autoload": {
+    "psr-4": {
+      "Discordier\\JustTextWidgets\\": "src"
+    }
+  },
   "extra": {
     "contao": {
       "symlinks": {
