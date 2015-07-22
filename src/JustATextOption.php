@@ -10,6 +10,8 @@
  * @filesource
  */
 
+namespace Discordier\JustTextWidgets;
+
 /**
  * Display a hidden field with a fixed value in the backend and the option name next to it.
  * This is useful when you need predefined values in a MultiColumnWizard i.e.
@@ -18,7 +20,7 @@
  * @copyright  CyberSpectrum
  * @package    JustTextWidgets
  */
-class JustATextOption extends Widget
+class JustATextOption extends \Widget
 {
     /**
      * The name of the template.

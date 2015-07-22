@@ -11,6 +11,8 @@
  * @filesource
  */
 
+namespace Discordier\JustTextWidgets;
+
 /**
  * Display a hidden field with a fixed value in the backend and the option name next to it.
  * This is useful when you need predefined values in a MultiColumnWizard i.e.

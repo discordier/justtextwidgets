@@ -10,6 +10,8 @@
  * @filesource
  */
 
+namespace Discordier\JustTextWidgets;
+
 /**
  * Display an explanation text in the backend.
  *
