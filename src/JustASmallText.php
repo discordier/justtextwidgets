@@ -4,6 +4,8 @@
  * @package    JustTextWidgets
  * @subpackage Core
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
+ * @author     Stefan heimes <stefan_heimes@hotmail.com>
+ * @author     Andreas Isaak <andy.jared@googlemail.com>
  * @copyright  CyberSpectrum
  * @license    LGPL
  * @filesource
