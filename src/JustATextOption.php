@@ -96,7 +96,7 @@ class JustATextOption extends \Widget
     {
         foreach ($options as $option) {
             // If it is an option group, handle it.
-            if (!isset($options['value'])) {
+            if (!isset($option['value'])) {
                 $result = $this->checkOptGroup($option, $class, $style);
                 if ($result) {
                     return $result;
