@@ -24,15 +24,12 @@
     "source": "https://github.com/discordier/justtextwidgets"
   },
   "require": {
-    "php": ">=5.3",
-    "contao/core-bundle": "~3.2 | ~4.1",
-    "contao-community-alliance/composer-plugin": "~2.4 | ~3.0"
+    "php": "^5.3 | ^7.0",
+    "contao/core-bundle": "^3.2 | ^4.1",
+    "contao-community-alliance/composer-plugin": "^2.4 | ^3.0"
   },
   "require-dev": {
-    "phpcq/all-tasks": "~1.1"
-  },
-  "replace": {
-    "contao-legacy/justtextwidgets": "*"
+    "phpcq/all-tasks": "^1.2"
   },
   "autoload": {
     "psr-4": {
@@ -48,7 +45,5 @@
     "branch-alias": {
       "dev-master": "1.0.x-dev"
     }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }
