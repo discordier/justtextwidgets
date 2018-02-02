@@ -3,14 +3,15 @@
 /**
  * This file is part of discordier/justtextwidgets.
  *
- * (c) 2012-2015 CyberSpectrum
+ * (c) 2012-2015 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * This project is provided in good faith and hope to be usable by anyone.
  *
- * @package    JustTextWidgets
+ * @package    MetaModels
+ * @subpackage Core
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Andreas Isaak <andy.jared@googlemail.com>
  * @copyright  2012-2017 CyberSpectrum
@@ -23,16 +24,18 @@ namespace Discordier\JustTextWidgets;
 use Contao\Widget;
 
 /**
- * Display an explanation text in the backend.
+ * This class renders longtext in the backend.
+ *
+ * @property string $html The HTML code to display
  */
-class JustAnExplanation extends Widget
+class JustALongExplanation extends Widget
 {
     /**
      * The name of the template.
      *
      * @var string
      */
-    protected $strTemplate = 'be_widget_explanation';
+    protected $strTemplate = 'be_widget_long_explanation';
 
     /**
      * Initialize the object.
@@ -52,16 +55,7 @@ class JustAnExplanation extends Widget
      */
     public function generateLabel()
     {
-        if ($this->strLabel == '') {
-            return '';
-        }
-
-        return sprintf(
-            '<span %s>%s%s</span>',
-            (strlen($this->strClass) ? ' class="' . $this->strClass . '"' : ''),
-            $this->strLabel,
-            ($this->required ? '<span class="mandatory">*</span>' : '')
-        );
+        return '';
     }
 
     /**
@@ -76,6 +70,6 @@ class JustAnExplanation extends Widget
     {
         $GLOBALS['TL_CSS']['just-a-long-explanation'] = 'system/modules/justtextwidgets/html/css.css';
 
-        return sprintf('<div>%s</div>', $this->content);
+        return $this->html;
     }
 }

@@ -8,7 +8,7 @@
   ],
   "type": "contao-module",
   "homepage": "https://www.cyberspectrum.de",
-  "license": "LGPL-3.0+",
+  "license": "LGPL-3.0-or-later",
   "authors": [
     {
       "name": "Christian Schiffler",
@@ -24,15 +24,12 @@
     "source": "https://github.com/discordier/justtextwidgets"
   },
   "require": {
-    "php": ">=5.3",
-    "contao/core": ">=3.2,<4",
-    "contao-community-alliance/composer-plugin": "~2.0"
+    "php": "^5.6 | ^7.0",
+    "contao/core-bundle": "^3.5 | ^4.4",
+    "contao-community-alliance/composer-plugin": "^2.4 | ^3.0"
   },
   "require-dev": {
-    "phpcq/all-tasks": "~1.0"
-  },
-  "replace": {
-    "contao-legacy/justtextwidgets": "*"
+    "phpcq/all-tasks": "^1.2"
   },
   "autoload": {
     "psr-4": {
@@ -41,14 +38,12 @@
   },
   "extra": {
     "contao": {
-      "symlinks": {
+      "sources": {
         "contao": "system/modules/justtextwidgets"
       }
     },
     "branch-alias": {
       "dev-master": "1.0.x-dev"
     }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }
