@@ -13,7 +13,6 @@
  * @package    MetaModels
  * @subpackage Core
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
- * @author     Andreas Isaak <andy.jared@googlemail.com>
  * @copyright  2012-2017 CyberSpectrum
  * @license    https://github.com/discordier/justtextwidgets/blob/master/LICENSE LGPL-3.0
  * @filesource
