@@ -33,7 +33,15 @@
   },
   "autoload": {
     "psr-4": {
-      "Discordier\\JustTextWidgets\\": "src"
+      "Discordier\\JustTextWidgetsBundle\\": "src"
+    },
+    "files": [
+      "src/deprecated-autoload.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Discordier\\JustTextWidgetsBundle\\Test\\": "tests"
     }
   },
   "extra": {

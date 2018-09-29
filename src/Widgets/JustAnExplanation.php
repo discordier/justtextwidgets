@@ -3,38 +3,36 @@
 /**
  * This file is part of discordier/justtextwidgets.
  *
- * (c) 2012-2015 The MetaModels team.
+ * (c) 2012-2018 CyberSpectrum
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * This project is provided in good faith and hope to be usable by anyone.
  *
- * @package    MetaModels
- * @subpackage Core
+ * @package    JustTextWidgets
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
- * @copyright  2012-2017 CyberSpectrum
- * @license    https://github.com/discordier/justtextwidgets/blob/master/LICENSE LGPL-3.0
+ * @author     Andreas Isaak <andy.jared@googlemail.com>
+ * @copyright  2012-2018 CyberSpectrum
+ * @license    https://github.com/discordier/justtextwidgets/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
 
-namespace Discordier\JustTextWidgets;
+namespace Discordier\JustTextWidgetsBundle\Widgets;
 
 use Contao\Widget;
 
 /**
- * This class renders longtext in the backend.
- *
- * @property string $html The HTML code to display
+ * Display an explanation text in the backend.
  */
-class JustALongExplanation extends Widget
+class JustAnExplanation extends Widget
 {
     /**
      * The name of the template.
      *
      * @var string
      */
-    protected $strTemplate = 'be_widget_long_explanation';
+    protected $strTemplate = 'be_widget_explanation';
 
     /**
      * Initialize the object.
@@ -54,7 +52,16 @@ class JustALongExplanation extends Widget
      */
     public function generateLabel()
     {
-        return '';
+        if ($this->strLabel == '') {
+            return '';
+        }
+
+        return sprintf(
+            '<span %s>%s%s</span>',
+            (strlen($this->strClass) ? ' class="' . $this->strClass . '"' : ''),
+            $this->strLabel,
+            ($this->required ? '<span class="mandatory">*</span>' : '')
+        );
     }
 
     /**
@@ -69,6 +76,6 @@ class JustALongExplanation extends Widget
     {
         $GLOBALS['TL_CSS']['just-a-long-explanation'] = 'system/modules/justtextwidgets/html/css.css';
 
-        return $this->html;
+        return sprintf('<div>%s</div>', $this->content);
     }
 }
