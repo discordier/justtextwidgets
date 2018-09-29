@@ -66,7 +66,7 @@ class JustALongExplanation extends Widget
      */
     public function generate()
     {
-        $GLOBALS['TL_CSS']['just-a-long-explanation'] = 'system/modules/justtextwidgets/html/css.css';
+        $GLOBALS['TL_CSS']['just-a-long-explanation'] = 'justtextwidgetsbundle/css.css';
 
         return $this->html;
     }

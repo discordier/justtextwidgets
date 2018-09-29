@@ -6,7 +6,7 @@
     "widget",
     "text"
   ],
-  "type": "contao-module",
+  "type": "contao-bundle",
   "homepage": "https://www.cyberspectrum.de",
   "license": "LGPL-3.0-or-later",
   "authors": [
@@ -25,10 +25,11 @@
   },
   "require": {
     "php": "^5.6 | ^7.0",
-    "contao/core-bundle": "^3.5 | ^4.4",
-    "contao-community-alliance/composer-plugin": "^2.4 | ^3.0"
+    "contao/core-bundle": "^4.4"
   },
   "require-dev": {
+    "contao/manager-plugin": "^2.1",
+    "cyberspectrum/contao-toolbox": "^0.7",
     "phpcq/all-tasks": "^1.2"
   },
   "autoload": {
@@ -45,11 +46,6 @@
     }
   },
   "extra": {
-    "contao": {
-      "sources": {
-        "contao": "system/modules/justtextwidgets"
-      }
-    },
     "branch-alias": {
       "dev-support/1.1": "1.1.x-dev"
     }
