@@ -40,7 +40,7 @@ class JustATextOption extends Widget
      *
      * @var array
      */
-    protected $arrOptions = array();
+    protected $arrOptions = [];
 
     /**
      * Add specific attributes.
@@ -53,15 +53,12 @@ class JustATextOption extends Widget
      */
     public function __set($strKey, $varValue)
     {
-        switch ($strKey) {
-            case 'options':
-                $this->arrOptions = deserialize($varValue);
-                break;
+        if ($strKey === 'options') {
+            $this->arrOptions = deserialize($varValue);
 
-            default:
-                parent::__set($strKey, $varValue);
-                break;
+            return;
         }
+        parent::__set($strKey, $varValue);
     }
 
     /**
@@ -81,8 +78,8 @@ class JustATextOption extends Widget
             );
         }
 
-        $strClass = (strlen($this->strClass) ? ' class="' . $this->strClass . '"' : '');
-        $strStyle = (strlen($this->arrAttributes['style']) ? ' style="' . $this->arrAttributes['style'] . '"' : '');
+        $strClass = ('' !== $this->strClass ? ' class="' . $this->strClass . '"' : '');
+        $strStyle = ('' !== $this->arrAttributes['style'] ? ' style="' . $this->arrAttributes['style'] . '"' : '');
 
         return $this->checkOptGroup($this->arrOptions, $strClass, $strStyle);
     }

@@ -52,13 +52,13 @@ class JustAnExplanation extends Widget
      */
     public function generateLabel()
     {
-        if ($this->strLabel == '') {
+        if ($this->strLabel === '') {
             return '';
         }
 
         return sprintf(
             '<span %s>%s%s</span>',
-            (strlen($this->strClass) ? ' class="' . $this->strClass . '"' : ''),
+            ('' !== $this->strClass ? ' class="' . $this->strClass . '"' : ''),
             $this->strLabel,
             ($this->required ? '<span class="mandatory">*</span>' : '')
         );
