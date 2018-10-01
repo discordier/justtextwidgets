@@ -72,6 +72,17 @@ class DeprecatedAutoloaderTest extends TestCase
      */
     public function testDeprecatedClassesAreAliased($oldClass, $newClass)
     {
+        // Fix for autoloading in Contao < 4.5
+        if (!class_exists('Controller', false)) {
+            if (!class_exists('System', false)) {
+                class_alias('Contao\System', 'System');
+            }
+            class_alias('Contao\Controller', 'Controller');
+        }
+        if (!trait_exists('TemplateInheritance', false)) {
+            class_alias('Contao\TemplateInheritance', 'TemplateInheritance');
+        }
+
         $this->assertTrue(class_exists($oldClass), sprintf('Class select "%s" is not found.', $oldClass));
 
         $oldClassReflection = new \ReflectionClass($oldClass);
