@@ -29,7 +29,6 @@
   },
   "require-dev": {
     "contao/manager-plugin": "^2.1",
-    "cyberspectrum/contao-toolbox": "^0.7",
     "phpcq/all-tasks": "^1.2"
   },
   "autoload": {
