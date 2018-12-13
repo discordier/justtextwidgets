@@ -79,7 +79,7 @@ class DeprecatedAutoloaderTest extends TestCase
                 class_alias('Contao\System', 'System');
             }
             if (class_exists('Contao\Controller', true)
-                && !class_exists('System', false)) {
+                && !class_exists('Controller', false)) {
                 class_alias('Contao\Controller', 'Controller');
             }
         }
