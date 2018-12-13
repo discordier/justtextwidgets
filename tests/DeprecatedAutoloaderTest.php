@@ -74,12 +74,17 @@ class DeprecatedAutoloaderTest extends TestCase
     {
         // Fix for autoloading in Contao < 4.5
         if (!class_exists('Controller', false)) {
-            if (!class_exists('System', false)) {
+            if (class_exists('Contao\System', true)
+                && !class_exists('System', false)) {
                 class_alias('Contao\System', 'System');
             }
-            class_alias('Contao\Controller', 'Controller');
+            if (class_exists('Contao\Controller', true)
+                && !class_exists('System', false)) {
+                class_alias('Contao\Controller', 'Controller');
+            }
         }
-        if (!trait_exists('TemplateInheritance', false)) {
+        if (trait_exists('Contao\TemplateInheritance', true)
+            && !trait_exists('TemplateInheritance', false)) {
             class_alias('Contao\TemplateInheritance', 'TemplateInheritance');
         }
 
