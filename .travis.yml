@@ -24,6 +24,7 @@ matrix:
       env: CONTAO_VERSION=~4.5.0
 
 install:
+  - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - travis_retry composer self-update && composer --version
   - composer require contao/core-bundle $CONTAO_VERSION --no-update;
   - travis_retry composer update --prefer-dist --no-interaction
