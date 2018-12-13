@@ -6,7 +6,7 @@
     "widget",
     "text"
   ],
-  "type": "contao-module",
+  "type": "contao-bundle",
   "homepage": "https://www.cyberspectrum.de",
   "license": "LGPL-3.0-or-later",
   "authors": [
@@ -25,25 +25,34 @@
   },
   "require": {
     "php": "^5.6 | ^7.0",
-    "contao/core-bundle": "^3.5 | ^4.4",
-    "contao-community-alliance/composer-plugin": "^2.4 | ^3.0"
+    "contao/core-bundle": "^4.4"
   },
   "require-dev": {
-    "phpcq/all-tasks": "^1.2"
+    "contao/manager-plugin": "^2.1",
+    "phpcq/all-tasks": "^1.2",
+    "php-http/mock-client": "^1.1"
   },
   "autoload": {
     "psr-4": {
-      "Discordier\\JustTextWidgets\\": "src"
+      "Discordier\\JustTextWidgetsBundle\\": "src"
+    },
+    "files": [
+      "src/deprecated-autoload.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Discordier\\JustTextWidgetsBundle\\Test\\": "tests"
     }
   },
   "extra": {
-    "contao": {
-      "sources": {
-        "contao": "system/modules/justtextwidgets"
-      }
-    },
+    "contao-manager-plugin": "Discordier\\JustTextWidgetsBundle\\ContaoManager\\Plugin",
     "branch-alias": {
-      "dev-master": "1.0.x-dev"
+      "dev-master": "1.2.x-dev",
+      "dev-support/1.1": "1.1.x-dev"
     }
+  },
+  "config": {
+    "sort-packages": true
   }
 }
