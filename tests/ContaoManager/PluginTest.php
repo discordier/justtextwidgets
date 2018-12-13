@@ -19,6 +19,7 @@
 
 namespace Discordier\JustTextWidgetsBundle\Test\ContaoManager;
 
+use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
@@ -60,6 +61,7 @@ class PluginTest extends TestCase
         /** @var BundleConfig $bundleConfig */
         $bundleConfig = $bundles[0];
 
+        $this->assertEquals($bundleConfig->getLoadAfter(), [ContaoCoreBundle::class]);
         $this->assertEquals($bundleConfig->getReplace(), ['justtextwidgets']);
     }
 }
