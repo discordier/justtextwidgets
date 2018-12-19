@@ -20,6 +20,7 @@
 
 namespace Discordier\JustTextWidgetsBundle\Widgets;
 
+use Contao\StringUtil;
 use Contao\Widget;
 
 /**
@@ -114,7 +115,7 @@ class JustATextOption extends Widget
                     '<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><span%s>%s</span>',
                     $this->strId,
                     $this->strName,
-                    specialchars($option['value']),
+                    StringUtil::specialchars($option['value']),
                     $class . $style,
                     $option['label']
                 );
