@@ -10,7 +10,7 @@
  *
  * This project is provided in good faith and hope to be usable by anyone.
  *
- * @package    JustTextWidgets
+ * @package    discordier/justtextwidgets
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Stefan heimes <stefan_heimes@hotmail.com>
  * @author     Andreas Isaak <andy.jared@googlemail.com>
