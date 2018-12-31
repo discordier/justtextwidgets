@@ -21,6 +21,7 @@
 
 namespace Discordier\JustTextWidgetsBundle\Widgets;
 
+use Contao\StringUtil;
 use Contao\Widget;
 
 /**
@@ -47,7 +48,7 @@ class JustASmallText extends Widget
             '<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><div%s>%s</div>',
             $this->strId,
             $this->strName,
-            $this->label ? specialchars($this->label) : specialchars($this->varValue),
+            StringUtil::specialchars($this->label ?: $this->varValue),
             $this->style ? ' style="' . $this->style . '"' : '',
             $this->label
         );

@@ -55,7 +55,7 @@ class JustATextOption extends Widget
     public function __set($strKey, $varValue)
     {
         if ($strKey === 'options') {
-            $this->arrOptions = deserialize($varValue);
+            $this->arrOptions = StringUtil::deserialize($varValue);
 
             return;
         }
