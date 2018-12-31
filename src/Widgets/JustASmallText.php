@@ -10,7 +10,7 @@
  *
  * This project is provided in good faith and hope to be usable by anyone.
  *
- * @package    JustTextWidgets
+ * @package    discordier/justtextwidgets
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Stefan heimes <stefan_heimes@hotmail.com>
  * @author     Andreas Isaak <andy.jared@googlemail.com>
@@ -21,6 +21,7 @@
 
 namespace Discordier\JustTextWidgetsBundle\Widgets;
 
+use Contao\StringUtil;
 use Contao\Widget;
 
 /**
@@ -47,7 +48,7 @@ class JustASmallText extends Widget
             '<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><div%s>%s</div>',
             $this->strId,
             $this->strName,
-            $this->label ? specialchars($this->label) : specialchars($this->varValue),
+            StringUtil::specialchars($this->label ?: $this->varValue),
             $this->style ? ' style="' . $this->style . '"' : '',
             $this->label
         );
