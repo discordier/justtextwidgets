@@ -5,3 +5,6 @@ h2.explanation_headline {
   font-size: 14px;
   background: url(../../../../system/themes/default/images/current.gif) no-repeat left center;
 }
+div.explanation_body {
+  font-size: .875rem;
+}
