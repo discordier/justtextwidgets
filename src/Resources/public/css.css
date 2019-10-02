@@ -2,3 +2,6 @@ h2.explanation_headline {
   margin: 3px 0px 9px;
   font-size: 14px;
 }
+div.explanation_body {
+  font-size: .875rem;
+}

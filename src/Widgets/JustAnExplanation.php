@@ -77,6 +77,6 @@ class JustAnExplanation extends Widget
     {
         $GLOBALS['TL_CSS']['just-a-long-explanation'] = 'bundles/discordierjusttextwidgets/css.css';
 
-        return sprintf('<div>%s</div>', $this->content);
+        return sprintf('<div class="explanation_body">%s</div>', $this->content);
     }
 }
