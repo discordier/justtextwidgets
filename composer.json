@@ -13,7 +13,7 @@
     {
       "name": "Christian Schiffler",
       "email": "c.schiffler@cyberspectrum.de",
-      "homepage": "http://www.cyberspectrum.de",
+      "homepage": "https://www.cyberspectrum.de",
       "role": "Developer"
     }
   ],
@@ -24,7 +24,7 @@
     "source": "https://github.com/discordier/justtextwidgets"
   },
   "require": {
-    "php": "^5.6 | ^7.0",
+    "php": "^5.6 | ^7.0 | ^8.0",
     "contao/core-bundle": "^4.4"
   },
   "require-dev": {
