@@ -1,14 +1,13 @@
 {
   "name": "discordier/justtextwidgets",
   "description": "Hidden fields with text values and explanation texts",
+  "license": "LGPL-3.0-or-later",
+  "type": "contao-bundle",
   "keywords": [
     "contao",
     "widget",
     "text"
   ],
-  "type": "contao-bundle",
-  "homepage": "https://www.cyberspectrum.de",
-  "license": "LGPL-3.0-or-later",
   "authors": [
     {
       "name": "Christian Schiffler",
@@ -17,6 +16,7 @@
       "role": "Developer"
     }
   ],
+  "homepage": "https://www.cyberspectrum.de",
   "support": {
     "email": "info@contao-community-alliance.de",
     "issues": "https://github.com/discordier/justtextwidgets/issues",
@@ -24,7 +24,7 @@
     "source": "https://github.com/discordier/justtextwidgets"
   },
   "require": {
-    "php": "^5.6 | ^7.0",
+    "php": "^7.0 || ^8.0",
     "contao/core-bundle": "^4.4"
   },
   "require-dev": {
@@ -44,14 +44,19 @@
       "Discordier\\JustTextWidgetsBundle\\Test\\": "tests"
     }
   },
+  "config": {
+    "allow-plugins": {
+      "contao-components/installer": false,
+      "ocramius/package-versions": false,
+      "contao/manager-plugin": false
+    },
+    "sort-packages": true
+  },
   "extra": {
-    "contao-manager-plugin": "Discordier\\JustTextWidgetsBundle\\ContaoManager\\Plugin",
     "branch-alias": {
       "dev-master": "1.2.x-dev",
       "dev-support/1.1": "1.1.x-dev"
-    }
-  },
-  "config": {
-    "sort-packages": true
+    },
+    "contao-manager-plugin": "Discordier\\JustTextWidgetsBundle\\ContaoManager\\Plugin"
   }
 }
