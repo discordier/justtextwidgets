@@ -37,22 +37,14 @@ class JustATextOption extends Widget
     protected $strTemplate = 'be_widget';
 
     /**
-     * The options.
-     *
-     * @var array
-     */
-    protected $arrOptions = [];
-
-    /**
      * Add specific attributes.
      *
      * @param string $strKey   The name of the key to set.
-     *
      * @param mixed  $varValue The value to use.
      *
-     * @return void
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function __set($strKey, $varValue)
+    public function __set($strKey, $varValue): void
     {
         if ($strKey === 'options') {
             $this->arrOptions = StringUtil::deserialize($varValue);
@@ -64,10 +56,8 @@ class JustATextOption extends Widget
 
     /**
      * Generate the widget and return it as string.
-     *
-     * @return string
      */
-    public function generate()
+    public function generate(): string
     {
         // Add empty option (XHTML) if there are none
         if (empty($this->arrOptions)) {
@@ -89,14 +79,12 @@ class JustATextOption extends Widget
      * Scan an option group for the selected option.
      *
      * @param array  $options The option array.
-     *
      * @param string $class   The html class to use.
-     *
      * @param string $style   The html style to use.
      *
-     * @return null|string
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    private function checkOptGroup($options, $class, $style)
+    private function checkOptGroup(array $options, string $class, string $style): ?string
     {
         foreach ($options as $option) {
             // If it is an option group, handle it.

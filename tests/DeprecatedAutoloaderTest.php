@@ -25,6 +25,7 @@ use Discordier\JustTextWidgetsBundle\Widgets\JustASmallText;
 use Discordier\JustTextWidgetsBundle\Widgets\JustAText;
 use Discordier\JustTextWidgetsBundle\Widgets\JustATextOption;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * This class tests if the deprecated autoloader works.
@@ -51,7 +52,7 @@ class DeprecatedAutoloaderTest extends TestCase
      *
      * @return array
      */
-    public function provideAliasClassMap()
+    public function provideAliasClassMap(): array
     {
         $values = [];
 
@@ -70,28 +71,34 @@ class DeprecatedAutoloaderTest extends TestCase
      *
      * @dataProvider provideAliasClassMap
      */
-    public function testDeprecatedClassesAreAliased($oldClass, $newClass)
+    public function testDeprecatedClassesAreAliased(string $oldClass, string $newClass)
     {
         // Fix for autoloading in Contao < 4.5
         if (!class_exists('Controller', false)) {
-            if (class_exists('Contao\System', true)
-                && !class_exists('System', false)) {
+            if (
+                class_exists('Contao\System', true)
+                && !class_exists('System', false)
+            ) {
                 class_alias('Contao\System', 'System');
             }
-            if (class_exists('Contao\Controller', true)
-                && !class_exists('Controller', false)) {
+            if (
+                class_exists('Contao\Controller', true)
+                && !class_exists('Controller', false)
+            ) {
                 class_alias('Contao\Controller', 'Controller');
             }
         }
-        if (trait_exists('Contao\TemplateInheritance', true)
-            && !trait_exists('TemplateInheritance', false)) {
+        if (
+            trait_exists('Contao\TemplateInheritance', true)
+            && !trait_exists('TemplateInheritance', false)
+        ) {
             class_alias('Contao\TemplateInheritance', 'TemplateInheritance');
         }
 
         $this->assertTrue(class_exists($oldClass), sprintf('Class select "%s" is not found.', $oldClass));
 
-        $oldClassReflection = new \ReflectionClass($oldClass);
-        $newClassReflection = new \ReflectionClass($newClass);
+        $oldClassReflection = new ReflectionClass($oldClass);
+        $newClassReflection = new ReflectionClass($newClass);
 
         $this->assertSame($newClassReflection->getFileName(), $oldClassReflection->getFileName());
     }

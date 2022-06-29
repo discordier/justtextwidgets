@@ -39,9 +39,9 @@ class JustALongExplanation extends Widget
     /**
      * Initialize the object.
      *
-     * @param bool|array $arrAttributes The initialization values.
+     * @param null|array $arrAttributes The initialization values.
      */
-    public function __construct($arrAttributes = false)
+    public function __construct($arrAttributes = null)
     {
         parent::__construct($arrAttributes);
         $this->strClass .= ' explanation';
