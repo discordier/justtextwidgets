@@ -61,18 +61,18 @@ class JustATextOption extends Widget
     {
         // Add empty option (XHTML) if there are none
         if (empty($this->arrOptions)) {
-            $this->arrOptions = array(
-                array(
+            $this->arrOptions = [
+                [
                     'value' => '',
                     'label' => '-'
-                )
-            );
+                ]
+            ];
         }
 
-        $strClass = ('' !== $this->strClass ? ' class="' . $this->strClass . '"' : '');
-        $strStyle = ('' !== $this->arrAttributes['style'] ? ' style="' . $this->arrAttributes['style'] . '"' : '');
+        $strClass = (!empty($this->strClass) ? ' class="' . $this->strClass . '"' : '');
+        $strStyle = ((!empty($style = $this->arrAttributes['style'] ?? null)) ? ' style="' . $style . '"' : '');
 
-        return $this->checkOptGroup($this->arrOptions, $strClass, $strStyle);
+        return $this->checkOptGroup($this->arrOptions, $strClass, $strStyle) ?? '';
     }
 
     /**
