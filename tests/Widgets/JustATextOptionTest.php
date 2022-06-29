@@ -49,6 +49,23 @@ class JustATextOptionTest extends TestCase
                 'value' => 'Text content value'
             ],
         ];
+        yield [
+            'expected' => '<input type="hidden" id="ctrl_id_value" name="name_value" value="Text content value" />' .
+                '<span class="class1 class2" style="color: #000;">Text content value</span>',
+            'attributes' => [
+                'id' => 'id_value',
+                'name' => 'name_value',
+                'options' => [
+                    [
+                        'label' => 'Text content value',
+                        'value' => 'Text content value',
+                    ]
+                ],
+                'value' => 'Text content value',
+                'class' => 'class1 class2',
+                'style' => 'color: #000;'
+            ],
+        ];
     }
 
     /**
