@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: PHP ${{ matrix.php }}
+    name: 'PHP: ${{ matrix.php }} Contao: ${{ matrix.contao }}'
     strategy:
       fail-fast: false
       matrix:
