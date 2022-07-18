@@ -29,6 +29,7 @@
     "symfony/http-kernel": "^4.4 || ^5.4"
   },
   "require-dev": {
+    "composer/semver": "^3.3.2",
     "contao/manager-plugin": "^2.1",
     "phpcq/runner-bootstrap": "^1.0@dev"
   },

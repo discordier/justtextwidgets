@@ -19,6 +19,8 @@
 
 namespace Discordier\JustTextWidgetsBundle\Test\Widgets;
 
+use Composer\InstalledVersions;
+use Composer\Semver\VersionParser;
 use Contao\Config;
 use Contao\System;
 use Discordier\JustTextWidgetsBundle\Widgets\JustATextOption;
@@ -42,8 +44,9 @@ class JustATextOptionTest extends TestCase
                 'name' => 'name_value',
                 'options' => [
                     [
-                        'label' => 'Text content value',
-                        'value' => 'Text content value',
+                        'label'   => 'Text content value',
+                        'value'   => 'Text content value',
+                        'default' => false,
                     ]
                 ],
                 'value' => 'Text content value'
@@ -59,6 +62,7 @@ class JustATextOptionTest extends TestCase
                     [
                         'label' => 'Text content value',
                         'value' => 'Text content value',
+                        'default' => false,
                     ]
                 ],
                 'value' => 'Text content value',
@@ -72,14 +76,13 @@ class JustATextOptionTest extends TestCase
      * @dataProvider generateProvider
      *
      * @SuppressWarnings(PHPMD.StaticAccess)
+     * @SuppressWarnings(PHPMD.ErrorControlOperator)
      */
     public function testGeneratesCorrectCode(string $expected, ?array $attributes): void
     {
         System::setContainer($this->mockContainer());
 
-        $widget = new JustATextOption($attributes);
-
-        self::assertSame($expected, $widget->generate());
+        self::assertSame($expected, $this->buildWidget($attributes)->generate());
     }
 
     private function mockContainer(): ContainerInterface
@@ -89,5 +92,18 @@ class JustATextOptionTest extends TestCase
         $container->expects(self::once())->method('has')->with(Config::class)->willReturn(true);
 
         return $container;
+    }
+
+    /**
+     * @SuppressWarnings(PHPMD.StaticAccess)
+     * @SuppressWarnings(PHPMD.ErrorControlOperator)
+     */
+    private function buildWidget(?array $attributes): JustATextOption
+    {
+        // 4.9 causes Undefined index issues.
+        if (InstalledVersions::satisfies(new VersionParser(), 'contao/core-bundle', '4.9.*')) {
+            return @new JustATextOption($attributes);
+        }
+        return new JustATextOption($attributes);
     }
 }

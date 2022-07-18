@@ -48,10 +48,8 @@ class JustAnExplanation extends Widget
 
     /**
      * Generate the label and return it as string.
-     *
-     * @return string
      */
-    public function generateLabel()
+    public function generateLabel(): string
     {
         if ($this->strLabel === '') {
             return '';
@@ -68,12 +66,10 @@ class JustAnExplanation extends Widget
     /**
      * Generate the widget and return it as string.
      *
-     * @return string
-     *
      * @SuppressWarnings(PHPMD.Superglobals)
      * @SuppressWarnings(PHPMD.CamelCaseVariableName)
      */
-    public function generate()
+    public function generate(): string
     {
         $GLOBALS['TL_CSS']['just-a-long-explanation'] = 'bundles/discordierjusttextwidgets/css.css';
 

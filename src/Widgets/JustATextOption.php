@@ -63,8 +63,9 @@ class JustATextOption extends Widget
         if (empty($this->arrOptions)) {
             $this->arrOptions = [
                 [
-                    'value' => '',
-                    'label' => '-'
+                    'value'   => '',
+                    'label'   => '-',
+                    'default' => false,
                 ]
             ];
         }

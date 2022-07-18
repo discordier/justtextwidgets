@@ -25,7 +25,7 @@ use Contao\Widget;
 /**
  * This class renders longtext in the backend.
  *
- * @property string $html The HTML code to display
+ * @property ?string $html The HTML code to display
  */
 class JustALongExplanation extends Widget
 {
@@ -49,10 +49,8 @@ class JustALongExplanation extends Widget
 
     /**
      * Generate the label and return it as string.
-     *
-     * @return string
      */
-    public function generateLabel()
+    public function generateLabel(): string
     {
         return '';
     }
@@ -60,15 +58,13 @@ class JustALongExplanation extends Widget
     /**
      * Generate the widget and return it as string.
      *
-     * @return string
-     *
      * @SuppressWarnings(PHPMD.Superglobals)
      * @SuppressWarnings(PHPMD.CamelCaseVariableName)
      */
-    public function generate()
+    public function generate(): string
     {
         $GLOBALS['TL_CSS']['just-a-long-explanation'] = 'bundles/discordierjusttextwidgets/css.css';
 
-        return $this->html;
+        return (string) $this->html;
     }
 }

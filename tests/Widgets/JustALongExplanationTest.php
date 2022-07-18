@@ -23,27 +23,29 @@ use Composer\InstalledVersions;
 use Composer\Semver\VersionParser;
 use Contao\Config;
 use Contao\System;
-use Discordier\JustTextWidgetsBundle\Widgets\JustAText;
+use Discordier\JustTextWidgetsBundle\Widgets\JustALongExplanation;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-/** @covers \Discordier\JustTextWidgetsBundle\Widgets\JustAText */
-class JustATextTest extends TestCase
+/** @covers \Discordier\JustTextWidgetsBundle\Widgets\JustALongExplanation */
+class JustALongExplanationTest extends TestCase
 {
     public function generateProvider(): iterable
     {
         yield [
-            'expected' => '<input type="hidden" id="ctrl_" name="" value="" /><span></span>',
+            'expected' => '',
             'attributes' => null,
         ];
         yield [
-            'expected' => '<input type="hidden" id="ctrl_id_value" name="name_value" value="Text content value" />' .
-                '<span>This is the label</span>',
+            'expected' => '<span>Text content value</span>',
             'attributes' => [
-                'id' => 'id_value',
-                'name' => 'name_value',
-                'value' => 'Text content value',
-                'label' => 'This is the label'
+                'html' => '<span>Text content value</span>'
+            ],
+        ];
+        yield [
+            'expected' => '<span class="class1 class2" style="color: #000;">Text content value</span>',
+            'attributes' => [
+                'html' => '<span class="class1 class2" style="color: #000;">Text content value</span>',
             ],
         ];
     }
@@ -52,6 +54,7 @@ class JustATextTest extends TestCase
      * @dataProvider generateProvider
      *
      * @SuppressWarnings(PHPMD.StaticAccess)
+     * @SuppressWarnings(PHPMD.ErrorControlOperator)
      */
     public function testGeneratesCorrectCode(string $expected, ?array $attributes): void
     {
@@ -73,12 +76,12 @@ class JustATextTest extends TestCase
      * @SuppressWarnings(PHPMD.StaticAccess)
      * @SuppressWarnings(PHPMD.ErrorControlOperator)
      */
-    private function buildWidget(?array $attributes): JustAText
+    private function buildWidget(?array $attributes): JustALongExplanation
     {
         // 4.9 causes Undefined index issues.
         if (InstalledVersions::satisfies(new VersionParser(), 'contao/core-bundle', '4.9.*')) {
-            return @new JustAText($attributes);
+            return @new JustALongExplanation($attributes);
         }
-        return new JustAText($attributes);
+        return new JustALongExplanation($attributes);
     }
 }
