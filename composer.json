@@ -1,22 +1,22 @@
 {
   "name": "discordier/justtextwidgets",
   "description": "Hidden fields with text values and explanation texts",
+  "license": "LGPL-3.0-or-later",
+  "type": "contao-bundle",
   "keywords": [
     "contao",
     "widget",
     "text"
   ],
-  "type": "contao-bundle",
-  "homepage": "https://www.cyberspectrum.de",
-  "license": "LGPL-3.0-or-later",
   "authors": [
     {
       "name": "Christian Schiffler",
       "email": "c.schiffler@cyberspectrum.de",
-      "homepage": "http://www.cyberspectrum.de",
+      "homepage": "https://www.cyberspectrum.de",
       "role": "Developer"
     }
   ],
+  "homepage": "https://www.cyberspectrum.de",
   "support": {
     "email": "info@contao-community-alliance.de",
     "issues": "https://github.com/discordier/justtextwidgets/issues",
@@ -24,13 +24,14 @@
     "source": "https://github.com/discordier/justtextwidgets"
   },
   "require": {
-    "php": "^5.6 | ^7.0",
-    "contao/core-bundle": "^4.4"
+    "php": "^7.4 || ^8.0",
+    "contao/core-bundle": "^4.4",
+    "symfony/http-kernel": "^4.4 || ^5.4"
   },
   "require-dev": {
+    "composer/semver": "^3.3.2",
     "contao/manager-plugin": "^2.1",
-    "phpcq/all-tasks": "^1.2",
-    "php-http/mock-client": "^1.1"
+    "phpcq/runner-bootstrap": "^1.0@dev"
   },
   "autoload": {
     "psr-4": {
@@ -45,14 +46,18 @@
       "Discordier\\JustTextWidgetsBundle\\Test\\": "tests"
     }
   },
-  "extra": {
-    "contao-manager-plugin": "Discordier\\JustTextWidgetsBundle\\ContaoManager\\Plugin",
-    "branch-alias": {
-      "dev-master": "1.2.x-dev",
-      "dev-support/1.1": "1.1.x-dev"
-    }
-  },
   "config": {
+    "allow-plugins": {
+      "contao-components/installer": false,
+      "ocramius/package-versions": false,
+      "contao/manager-plugin": false
+    },
     "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.3.x-dev"
+    },
+    "contao-manager-plugin": "Discordier\\JustTextWidgetsBundle\\ContaoManager\\Plugin"
   }
 }

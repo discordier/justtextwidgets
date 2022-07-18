@@ -40,9 +40,9 @@ class JustASmallText extends Widget
     /**
      * Generate the widget and return it as string.
      *
-     * @return string
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
-    public function generate()
+    public function generate(): string
     {
         return sprintf(
             '<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><div%s>%s</div>',
