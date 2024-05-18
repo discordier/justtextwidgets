@@ -57,7 +57,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "2.0.x-dev"
+      "dev-release/2.0.0": "2.0.x-dev"
     },
     "contao-manager-plugin": "Discordier\\JustTextWidgetsBundle\\ContaoManager\\Plugin"
   }
