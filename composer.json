@@ -36,10 +36,7 @@
   "autoload": {
     "psr-4": {
       "Discordier\\JustTextWidgetsBundle\\": "src"
-    },
-    "files": [
-      "src/deprecated-autoload.php"
-    ]
+    }
   },
   "autoload-dev": {
     "psr-4": {
@@ -49,7 +46,6 @@
   "config": {
     "allow-plugins": {
       "contao-components/installer": false,
-      "ocramius/package-versions": false,
       "contao/manager-plugin": false,
       "php-http/discovery": false
     },
