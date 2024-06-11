@@ -14,18 +14,11 @@ phpcq:
       version: ^1.1
       signed: false
     composer-require-checker:
-      version: ^1.0
+      version: ^1.1
       signed: false
-      requirements:
-        composer-require-checker:
-          signed: false
-          version: ^3.3
     phpmd:
       version: ^1.0
       signed: false
-      requirements:
-        phpmd:
-          signed: false
     phpcpd:
       version: ^1.1.1
       signed: false
@@ -36,7 +29,7 @@ phpcq:
       version: ^1.0
       signed: false
     phpcs:
-      version: ^1.0
+      version: ^1.2
       signed: false
     composer-normalize:
       version: ^1.0
@@ -54,6 +47,7 @@ phpcq:
     # PHP_CodeSniffer
     - 31C7E470E2138192
     - 5E6DDE998AB73B8E
+    - A978220305CD5C32
     # Composer normalize
     - C00543248C87FB13
     # phpmd
