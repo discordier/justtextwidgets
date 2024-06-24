@@ -25,6 +25,8 @@ use Contao\Widget;
 
 /**
  * Display an explanation text in the backend.
+ *
+ * @property ?string $content
  */
 class JustAnExplanation extends Widget
 {
@@ -43,6 +45,10 @@ class JustAnExplanation extends Widget
     public function __construct($arrAttributes = null)
     {
         parent::__construct($arrAttributes);
+        /**
+         * @psalm-suppress UninitializedProperty
+         * @psalm-suppress PossiblyNullOperand
+         */
         $this->strClass .= ' explanation';
     }
 
@@ -71,8 +77,9 @@ class JustAnExplanation extends Widget
      */
     public function generate(): string
     {
+        /** @psalm-suppress MixedArrayAssignment */
         $GLOBALS['TL_CSS']['just-a-long-explanation'] = 'bundles/discordierjusttextwidgets/css.css';
 
-        return sprintf('<div class="explanation_body">%s</div>', $this->content);
+        return sprintf('<div class="explanation_body">%s</div>', (string) $this->content);
     }
 }

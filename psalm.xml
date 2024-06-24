@@ -12,4 +12,31 @@
             <directory name="src/Resources"/>
         </ignoreFiles>
     </projectFiles>
+    <issueHandlers>
+        <PropertyNotSetInConstructor>
+            <errorLevel type="suppress">
+                <!-- Ignore uninitialized inherited properties from Contao Widget -->
+                <referencedProperty name="Contao\TemplateInheritance::$strParent"/>
+                <referencedProperty name="Contao\TemplateInheritance::$strDefault"/>
+                <referencedProperty name="Contao\Widget::$strId"/>
+                <referencedProperty name="Contao\Widget::$strName"/>
+                <referencedProperty name="Contao\Widget::$strLabel"/>
+                <referencedProperty name="Contao\Widget::$inputCallback"/>
+                <referencedProperty name="Contao\Widget::$strPrefix"/>
+                <referencedProperty name="Contao\Widget::$strWizard"/>
+                <referencedProperty name="Contao\Widget::$objDca"/>
+                <referencedProperty name="Contao\Widget::$strClass"/>
+            </errorLevel>
+        </PropertyNotSetInConstructor>
+        <PossiblyNullArgument>
+            <errorLevel type="suppress">
+                <referencedFunction name="Contao\Widget::addAttributes"/>
+            </errorLevel>
+        </PossiblyNullArgument>
+        <MixedAssignment>
+            <errorLevel type="suppress">
+                <file name="vendor/contao/core-bundle/contao/library/Contao/Widget.php"/>
+            </errorLevel>
+        </MixedAssignment>
+    </issueHandlers>
 </psalm>
