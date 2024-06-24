@@ -19,8 +19,6 @@
 
 namespace Discordier\JustTextWidgetsBundle\Test\Widgets;
 
-use Composer\InstalledVersions;
-use Composer\Semver\VersionParser;
 use Contao\Config;
 use Contao\System;
 use Discordier\JustTextWidgetsBundle\Widgets\JustALongExplanation;
@@ -78,10 +76,6 @@ class JustALongExplanationTest extends TestCase
      */
     private function buildWidget(?array $attributes): JustALongExplanation
     {
-        // 4.9 causes Undefined index issues.
-        if (InstalledVersions::satisfies(new VersionParser(), 'contao/core-bundle', '4.9.*')) {
-            return @new JustALongExplanation($attributes);
-        }
         return new JustALongExplanation($attributes);
     }
 }

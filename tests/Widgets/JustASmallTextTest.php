@@ -19,8 +19,6 @@
 
 namespace Discordier\JustTextWidgetsBundle\Test\Widgets;
 
-use Composer\InstalledVersions;
-use Composer\Semver\VersionParser;
 use Contao\Config;
 use Contao\System;
 use Discordier\JustTextWidgetsBundle\Widgets\JustASmallText;
@@ -86,10 +84,6 @@ class JustASmallTextTest extends TestCase
      */
     private function buildWidget(?array $attributes): JustASmallText
     {
-        // 4.9 causes Undefined index issues.
-        if (InstalledVersions::satisfies(new VersionParser(), 'contao/core-bundle', '4.9.*')) {
-            return @new JustASmallText($attributes);
-        }
         return new JustASmallText($attributes);
     }
 }
