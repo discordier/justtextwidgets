@@ -26,6 +26,8 @@ use Contao\Widget;
 /**
  * Display a hidden field with a fixed value in the backend and the option name next to it.
  * This is useful when you need predefined values in a MultiColumnWizard i.e.
+ *
+ * @psalm-type TOptionValue=array{value?: string, label: string}
  */
 class JustATextOption extends Widget
 {
@@ -47,7 +49,8 @@ class JustATextOption extends Widget
     public function __set($strKey, $varValue): void
     {
         if ($strKey === 'options') {
-            $this->arrOptions = StringUtil::deserialize($varValue);
+            /** @psalm-suppress MixedAssignment */
+            $this->arrOptions = StringUtil::deserialize($varValue, true);
 
             return;
         }
@@ -70,26 +73,31 @@ class JustATextOption extends Widget
             ];
         }
 
-        $strClass = (!empty($this->strClass) ? ' class="' . $this->strClass . '"' : '');
-        $strStyle = ((!empty($style = $this->arrAttributes['style'] ?? null)) ? ' style="' . $style . '"' : '');
+        /** @psalm-suppress RedundantCastGivenDocblockType - Contao does not ensure we get a string here, can be null */
+        $strClass = ('' !== (string) $this->strClass ? ' class="' . $this->strClass . '"' : '');
+        if ('' !== ($strStyle = (string) ($this->arrAttributes['style'] ?? ''))) {
+            $strStyle = ' style="' . $strStyle . '"';
+        }
 
-        return $this->checkOptGroup($this->arrOptions, $strClass, $strStyle) ?? '';
+        /** @psalm-suppress ArgumentTypeCoercion - Contao does not denote the correct types. */
+        return $this->checkOptGroup($this->arrOptions, $strClass, $strStyle);
     }
 
     /**
      * Scan an option group for the selected option.
      *
-     * @param array  $options The option array.
-     * @param string $class   The html class to use.
-     * @param string $style   The html style to use.
+     * @param list<TOptionValue|list<TOptionValue>> $options The option array.
+     * @param string                                $class   The html class to use.
+     * @param string                                $style   The html style to use.
      *
-     * @SuppressWarnings(PHPMD.StaticAccess)
+     * @return string
      */
-    private function checkOptGroup(array $options, string $class, string $style): ?string
+    private function checkOptGroup(array $options, string $class, string $style): string
     {
         foreach ($options as $option) {
             // If it is an option group, handle it.
             if (!isset($option['value'])) {
+                /** @psalm-suppress ArgumentTypeCoercion - Must be a valid array here. */
                 $result = $this->checkOptGroup($option, $class, $style);
                 if ($result) {
                     return $result;
@@ -106,11 +114,11 @@ class JustATextOption extends Widget
                     $this->strName,
                     StringUtil::specialchars($option['value']),
                     $class . $style,
-                    $option['label']
+                    $option['label'] ?? ''
                 );
             }
         }
 
-        return null;
+        return '';
     }
 }

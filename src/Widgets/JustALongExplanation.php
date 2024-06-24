@@ -44,6 +44,10 @@ class JustALongExplanation extends Widget
     public function __construct($arrAttributes = null)
     {
         parent::__construct($arrAttributes);
+        /**
+         * @psalm-suppress UninitializedProperty
+         * @psalm-suppress PossiblyNullOperand
+         */
         $this->strClass .= ' explanation';
     }
 
@@ -63,6 +67,7 @@ class JustALongExplanation extends Widget
      */
     public function generate(): string
     {
+        /** @psalm-suppress MixedArrayAssignment */
         $GLOBALS['TL_CSS']['just-a-long-explanation'] = 'bundles/discordierjusttextwidgets/css.css';
 
         return (string) $this->html;

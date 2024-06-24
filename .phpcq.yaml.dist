@@ -11,25 +11,25 @@ phpcq:
       version: ^1.0
       signed: false
     psalm:
-      version: ^1.0
+      version: ^1.1
       signed: false
     composer-require-checker:
-      version: ^1.0
+      version: ^1.1
       signed: false
     phpmd:
       version: ^1.0
       signed: false
-      requirements:
-        phpmd:
-          signed: false
     phpcpd:
       version: ^1.1.1
       signed: false
+      requirements:
+        phpcpd:
+          version: ^6.0
     phploc:
       version: ^1.0
       signed: false
     phpcs:
-      version: ^1.0
+      version: ^1.2
       signed: false
     composer-normalize:
       version: ^1.0
@@ -46,10 +46,14 @@ phpcq:
     - D2CCAC42F6295E7D
     # PHP_CodeSniffer
     - 31C7E470E2138192
+    - 5E6DDE998AB73B8E
+    - A978220305CD5C32
     # Composer normalize
     - C00543248C87FB13
     # phpmd
     - 0F9684B8B16B7AB0
+    - A4E55EA12C7C085C
+    - 9093F8B32E4815AA
 
 tasks:
   fix:
@@ -75,16 +79,16 @@ tasks:
   phpmd:
     config:
       ruleset:
-        - cleancode
-        - codesize
-        - controversial
-        - design
-        - naming
-        - unusedcode
+        - ./.phpmd.xml
 
   composer-require-checker:
     config:
       config_file: '.composer-require-checker.json'
+
+  composer-normalize-fix:
+    plugin: composer-normalize
+    config:
+      dry_run: false
 
   phpcs:
     config: &phpcs-config

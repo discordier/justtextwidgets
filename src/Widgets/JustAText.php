@@ -47,7 +47,7 @@ class JustAText extends Widget
             '<input type="hidden" id="ctrl_%s" name="%s" value="%s" /><span>%s</span>',
             $this->strId,
             $this->strName,
-            StringUtil::specialchars($this->varValue),
+            StringUtil::specialchars((string) $this->varValue),
             $this->label
         );
     }
