@@ -63,7 +63,7 @@ $GLOBALS['TL_DCA']['tl_mytable']['fields']['justtextoption'] = [
 ];
 ```
 
-# justexplanation
+## justexplanation
 With `justexplanation` a simple text can be output via the parameter `content` and the option `xlabel`.
 
 ```
