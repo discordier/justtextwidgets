@@ -54,6 +54,7 @@ class JustALongExplanation extends Widget
     /**
      * Generate the label and return it as string.
      */
+    #[\Override]
     public function generateLabel(): string
     {
         return '';
@@ -65,6 +66,7 @@ class JustALongExplanation extends Widget
      * @SuppressWarnings(PHPMD.Superglobals)
      * @SuppressWarnings(PHPMD.CamelCaseVariableName)
      */
+    #[\Override]
     public function generate(): string
     {
         /** @psalm-suppress MixedArrayAssignment */

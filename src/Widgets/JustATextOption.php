@@ -46,6 +46,7 @@ class JustATextOption extends Widget
      *
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
+    #[\Override]
     public function __set($strKey, $varValue): void
     {
         if ($strKey === 'options') {
@@ -60,6 +61,7 @@ class JustATextOption extends Widget
     /**
      * Generate the widget and return it as string.
      */
+    #[\Override]
     public function generate(): string
     {
         // Add empty option (XHTML) if there are none

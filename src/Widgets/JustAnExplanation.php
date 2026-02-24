@@ -55,6 +55,7 @@ class JustAnExplanation extends Widget
     /**
      * Generate the label and return it as string.
      */
+    #[\Override]
     public function generateLabel(): string
     {
         if ($this->strLabel === '') {
@@ -75,6 +76,7 @@ class JustAnExplanation extends Widget
      * @SuppressWarnings(PHPMD.Superglobals)
      * @SuppressWarnings(PHPMD.CamelCaseVariableName)
      */
+    #[\Override]
     public function generate(): string
     {
         /** @psalm-suppress MixedArrayAssignment */

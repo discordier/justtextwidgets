@@ -42,6 +42,7 @@ class JustASmallText extends Widget
      *
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
+    #[\Override]
     public function generate(): string
     {
         return sprintf(
