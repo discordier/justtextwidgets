@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <psalm
     errorLevel="1"
+    hideExternalErrors="true"
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
@@ -28,15 +29,5 @@
                 <referencedProperty name="Contao\Widget::$strClass"/>
             </errorLevel>
         </PropertyNotSetInConstructor>
-        <PossiblyNullArgument>
-            <errorLevel type="suppress">
-                <referencedFunction name="Contao\Widget::addAttributes"/>
-            </errorLevel>
-        </PossiblyNullArgument>
-        <MixedAssignment>
-            <errorLevel type="suppress">
-                <file name="vendor/contao/core-bundle/contao/library/Contao/Widget.php"/>
-            </errorLevel>
-        </MixedAssignment>
     </issueHandlers>
 </psalm>

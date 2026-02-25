@@ -20,13 +20,12 @@
   "support": {
     "email": "info@contao-community-alliance.de",
     "issues": "https://github.com/discordier/justtextwidgets/issues",
-    "irc": "irc://irc.freenode.org/contao.dev",
     "source": "https://github.com/discordier/justtextwidgets"
   },
   "require": {
     "php": "^8.2",
     "contao/core-bundle": "^5.3",
-    "symfony/http-kernel": "^6.4"
+    "symfony/http-kernel": "^6.4 || ^7.4"
   },
   "require-dev": {
     "contao/manager-plugin": "^2.13",

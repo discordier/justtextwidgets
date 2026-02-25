@@ -22,13 +22,15 @@ namespace Discordier\JustTextWidgetsBundle\Test\Widgets;
 use Contao\Config;
 use Contao\System;
 use Discordier\JustTextWidgetsBundle\Widgets\JustALongExplanation;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-/** @covers \Discordier\JustTextWidgetsBundle\Widgets\JustALongExplanation */
+#[CoversClass(JustALongExplanation::class)]
 class JustALongExplanationTest extends TestCase
 {
-    public function generateProvider(): iterable
+    public static function generateProvider(): iterable
     {
         yield [
             'expected' => '',
@@ -49,11 +51,10 @@ class JustALongExplanationTest extends TestCase
     }
 
     /**
-     * @dataProvider generateProvider
-     *
      * @SuppressWarnings(PHPMD.StaticAccess)
      * @SuppressWarnings(PHPMD.ErrorControlOperator)
      */
+    #[DataProvider('generateProvider')]
     public function testGeneratesCorrectCode(string $expected, ?array $attributes): void
     {
         System::setContainer($this->mockContainer());
@@ -63,9 +64,9 @@ class JustALongExplanationTest extends TestCase
 
     private function mockContainer(): ContainerInterface
     {
-        $container = $this->getMockForAbstractClass(ContainerInterface::class);
+        $container = $this->getMockBuilder(ContainerInterface::class)->getMock();
 
-        $container->expects(self::once())->method('has')->with(Config::class)->willReturn(true);
+        $container->expects($this->once())->method('has')->with(Config::class)->willReturn(true);
 
         return $container;
     }
