@@ -30,7 +30,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 #[CoversClass(JustASmallTextTest::class)]
 class JustASmallTextTest extends TestCase
 {
-    public function generateProvider(): iterable
+    public static function generateProvider(): iterable
     {
         yield [
             'expected' => '<input type="hidden" id="ctrl_" name="" value="" /><div></div>',
@@ -72,9 +72,9 @@ class JustASmallTextTest extends TestCase
 
     private function mockContainer(): ContainerInterface
     {
-        $container = $this->getMockForAbstractClass(ContainerInterface::class);
+        $container = $this->getMockBuilder(ContainerInterface::class)->getMock();
 
-        $container->expects(self::once())->method('has')->with(Config::class)->willReturn(true);
+        $container->expects($this->once())->method('has')->with(Config::class)->willReturn(true);
 
         return $container;
     }

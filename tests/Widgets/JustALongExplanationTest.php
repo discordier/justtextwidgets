@@ -30,7 +30,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 #[CoversClass(JustALongExplanation::class)]
 class JustALongExplanationTest extends TestCase
 {
-    public function generateProvider(): iterable
+    public static function generateProvider(): iterable
     {
         yield [
             'expected' => '',
@@ -64,9 +64,9 @@ class JustALongExplanationTest extends TestCase
 
     private function mockContainer(): ContainerInterface
     {
-        $container = $this->getMockForAbstractClass(ContainerInterface::class);
+        $container = $this->getMockBuilder(ContainerInterface::class)->getMock();
 
-        $container->expects(self::once())->method('has')->with(Config::class)->willReturn(true);
+        $container->expects($this->once())->method('has')->with(Config::class)->willReturn(true);
 
         return $container;
     }
