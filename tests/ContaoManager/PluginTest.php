@@ -24,6 +24,7 @@ use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Discordier\JustTextWidgetsBundle\ContaoManager\Plugin;
+use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -45,11 +46,10 @@ class PluginTest extends TestCase
     }
 
     /**
-     * Tests that the a valid bundle config is created.
-     *
-     * @return void
+     * Tests that a valid bundle config is created.
      */
-    public function testBundleConfig()
+    #[AllowMockObjectsWithoutExpectations]
+    public function testBundleConfig(): void
     {
         $parser  = $this->getMockBuilder(ParserInterface::class)->getMock();
         $plugin  = new Plugin();
