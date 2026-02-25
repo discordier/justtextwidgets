@@ -22,10 +22,12 @@ namespace Discordier\JustTextWidgetsBundle\Test\Widgets;
 use Contao\Config;
 use Contao\System;
 use Discordier\JustTextWidgetsBundle\Widgets\JustASmallText;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-/** @covers \Discordier\JustTextWidgetsBundle\Widgets\JustASmallText */
+#[CoversClass(JustASmallTextTest::class)]
 class JustASmallTextTest extends TestCase
 {
     public function generateProvider(): iterable
@@ -58,10 +60,9 @@ class JustASmallTextTest extends TestCase
     }
 
     /**
-     * @dataProvider generateProvider
-     *
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
+    #[DataProvider('generateProvider')]
     public function testGeneratesCorrectCode(string $expected, ?array $attributes): void
     {
         System::setContainer($this->mockContainer());

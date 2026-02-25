@@ -22,10 +22,12 @@ namespace Discordier\JustTextWidgetsBundle\Test\Widgets;
 use Contao\Config;
 use Contao\System;
 use Discordier\JustTextWidgetsBundle\Widgets\JustATextOption;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-/** @covers \Discordier\JustTextWidgetsBundle\Widgets\JustATextOption */
+#[CoversClass(JustATextOptionTest::class)]
 class JustATextOptionTest extends TestCase
 {
     public function generateProvider(): iterable
@@ -71,11 +73,10 @@ class JustATextOptionTest extends TestCase
     }
 
     /**
-     * @dataProvider generateProvider
-     *
      * @SuppressWarnings(PHPMD.StaticAccess)
      * @SuppressWarnings(PHPMD.ErrorControlOperator)
      */
+    #[DataProvider('generateProvider')]
     public function testGeneratesCorrectCode(string $expected, ?array $attributes): void
     {
         System::setContainer($this->mockContainer());

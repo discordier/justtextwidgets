@@ -3,7 +3,7 @@
 /**
  * This file is part of discordier/justtextwidgets.
  *
- * (c) 2012-2019 CyberSpectrum
+ * (c) 2012-2026 CyberSpectrum
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,7 +13,7 @@
  * @package    discordier/justtextwidgets
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Ingolf Steinhardt <info@e-spin.de>
- * @copyright  2012-2019 CyberSpectrum
+ * @copyright  2012-2026 CyberSpectrum
  * @license    https://github.com/discordier/justtextwidgets/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
@@ -26,6 +26,8 @@ use Contao\Widget;
  * This class renders longtext in the backend.
  *
  * @property ?string $html The HTML code to display
+ *
+ * @api
  */
 class JustALongExplanation extends Widget
 {

@@ -3,7 +3,7 @@
 /**
  * This file is part of discordier/justtextwidgets.
  *
- * (c) 2012-2018 CyberSpectrum
+ * (c) 2012-2026 CyberSpectrum
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,7 +13,8 @@
  * @package    discordier/justtextwidgets
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Andreas Isaak <andy.jared@googlemail.com>
- * @copyright  2012-2018 CyberSpectrum
+ * @author     Ingolf Steinhardt <info@e-spin.de.de>
+ * @copyright  2012-2026 CyberSpectrum
  * @license    https://github.com/discordier/justtextwidgets/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
@@ -28,6 +29,8 @@ use Contao\Widget;
  * This is useful when you need predefined values in a MultiColumnWizard i.e.
  *
  * @psalm-type TOptionValue=array{value?: string, label: string}
+ *
+ * @api
  */
 class JustATextOption extends Widget
 {
