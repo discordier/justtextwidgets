@@ -20,3 +20,4 @@ composer.lock
 /.pdepend/*
 /.phpcq/*
 /.phpunit.result.cache
+/.phpunit.cache/
