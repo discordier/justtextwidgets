@@ -23,7 +23,7 @@
     "source": "https://github.com/discordier/justtextwidgets"
   },
   "require": {
-    "php": "^8.2",
+    "php": "^8.4",
     "contao/core-bundle": "^5.3 || ^6.0",
     "symfony/http-kernel": "^6.4 || ^7.4 || ^8.0"
   },
