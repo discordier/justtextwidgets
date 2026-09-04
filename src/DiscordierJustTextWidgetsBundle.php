@@ -26,6 +26,12 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * The Bundle class.
  *
  * @api
+ *
+ * @psalm-suppress DeprecatedInterface Bundle implements the deprecated BundleInterface under
+ *     Symfony 8, but there is no drop-in replacement: Symfony\Component\DependencyInjection\
+ *     Kernel\AbstractBundle expects the newer loadExtension()/configure() contract rather than the
+ *     classic reflection-based Extension auto-discovery, and migrating to it is a real rewrite,
+ *     not a one-line fix.
  */
 class DiscordierJustTextWidgetsBundle extends Bundle
 {
