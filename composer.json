@@ -23,9 +23,9 @@
     "source": "https://github.com/discordier/justtextwidgets"
   },
   "require": {
-    "php": "^8.2",
-    "contao/core-bundle": "^5.3",
-    "symfony/http-kernel": "^6.4 || ^7.4"
+    "php": "^8.4",
+    "contao/core-bundle": "^5.3 || ^6.0",
+    "symfony/http-kernel": "^6.4 || ^7.4 || ^8.0"
   },
   "require-dev": {
     "contao/manager-plugin": "^2.13",
@@ -51,7 +51,8 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "2.1.x-dev"
+      "dev-master": "2.1.x-dev",
+      "dev-release/2.2.0": "2.2.x-dev"
     },
     "contao-manager-plugin": "Discordier\\JustTextWidgetsBundle\\ContaoManager\\Plugin"
   }

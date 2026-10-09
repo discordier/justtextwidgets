@@ -26,6 +26,10 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * The Bundle class.
  *
  * @api
+ *
+ * @psalm-suppress DeprecatedInterface AbstractBundle is no drop-in replacement: it disables the
+ *     classic Extension auto-discovery, so switching would require porting the extension to
+ *     loadExtension().
  */
 class DiscordierJustTextWidgetsBundle extends Bundle
 {
